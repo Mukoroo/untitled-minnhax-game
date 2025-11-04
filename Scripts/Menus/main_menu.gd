@@ -8,7 +8,7 @@ func _ready() -> void:
 func _on_start_game_pressed() -> void:
 	print("Starting game")
 	## TODO: Define game scene
-	get_tree().change_scene_to_file("res://scenes/debug/placeholder.tscn")
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 func _on_options_pressed() -> void:

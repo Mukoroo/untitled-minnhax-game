@@ -16,6 +16,21 @@ grow_vertical = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="MainContainer"]
 layout_mode = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Keyboard 1 / Controller X
+Choice 1
+
+Keyboard 2 / Controller B
+Choice 2"
+
+[node name="VSeparator2" type="VSeparator" parent="MainContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MainContainer/HBoxContainer"]
 layout_mode = 2
 
