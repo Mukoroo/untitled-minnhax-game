@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbl0632a6eysy"]
+[gd_scene load_steps=3 format=3 uid="uid://dbl0632a6eysy"]
 
 [ext_resource type="Script" uid="uid://s1aeoohv1qbe" path="res://Scripts/episode_manager.gd" id="1_ehkn1"]
+[ext_resource type="PackedScene" uid="uid://daaouefdvfl0f" path="res://Scenes/ChoiceUI/ChoiceUI.tscn" id="2_3y2b5"]
 
 [node name="EpisodeManager" type="Node2D"]
 script = ExtResource("1_ehkn1")
@@ -23,6 +24,8 @@ text = "Time remaining: "
 
 [node name="TimeRemainingLabel2" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+
+[node name="ChoiceUI" parent="." instance=ExtResource("2_3y2b5")]
 
 [connection signal="timeout" from="EpisodeTimer" to="." method="_on_episode_timer_timeout"]
 [connection signal="pressed" from="HBoxContainer/StartEpButton" to="." method="_on_start_ep_button_pressed"]

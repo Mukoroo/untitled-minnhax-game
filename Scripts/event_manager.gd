@@ -17,6 +17,7 @@ func generate_event():
 	var event = event_scene.instantiate() ##TODO: set relevant details in the Event scene from the picked event
 	$Events.add_child(event)
 	update_Debug_event_UI()
+	$".."/ChoiceUI.fill_event_ui()
 	
 
 func pick_event():

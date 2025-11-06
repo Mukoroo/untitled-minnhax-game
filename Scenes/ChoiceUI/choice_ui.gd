@@ -10,6 +10,7 @@ extends Control
 @onready var character_portrait: PanelContainer = %CharacterPortrait
 
 func _ready() -> void:
+	blank_event_ui()
 	pass
 
 #Connect To Event Manager
@@ -28,8 +29,17 @@ func update_metrics():
 func fill_event_ui():
 	#Fill in Character Portrait with correct Image
 	#character_portrait.
+	%LabelEventText.text = $".."/EventManager.pickedEvent.description
+	$CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice1.text = $".."/EventManager.pickedEvent.choice1
+	$CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice2.text = $".."/EventManager.pickedEvent.choice2
 	pass
 
+func blank_event_ui():
+	# Set ChoiceUI with blank details on first load
+	%LabelEventText.text = ""
+	$CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice1.text = ""
+	$CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice2.text = ""
+	
 ##Choice Button Signal Connections
 #On Choice made, emit signal to inform next step of process
 #Event Manager?
