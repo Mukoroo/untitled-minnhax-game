@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbl0632a6eysy"]
+
+[ext_resource type="Script" uid="uid://s1aeoohv1qbe" path="res://Scripts/episode_manager.gd" id="1_ehkn1"]
+
+[node name="EpisodeManager" type="Node2D"]
+script = ExtResource("1_ehkn1")
+
+[node name="EpisodeTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartEpButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Start episode"
+
+[node name="TimeRemainingLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Time remaining: "
+
+[node name="TimeRemainingLabel2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[connection signal="timeout" from="EpisodeTimer" to="." method="_on_episode_timer_timeout"]
+[connection signal="pressed" from="HBoxContainer/StartEpButton" to="." method="_on_start_ep_button_pressed"]

@@ -37,9 +37,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="LoadPlaceholder" type="Button" parent="DEBUGAspectRatioContainer/Control2/VBoxContainer"]
+[node name="GoToEpisode" type="Button" parent="DEBUGAspectRatioContainer/Control2/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Go to placeholder scene"
+text = "Go to episode"
 
-[connection signal="pressed" from="DEBUGAspectRatioContainer/Control2/VBoxContainer/LoadPlaceholder" to="." method="_on_load_placeholder_pressed"]
+[connection signal="pressed" from="DEBUGAspectRatioContainer/Control2/VBoxContainer/GoToEpisode" to="." method="_on_go_to_episode_pressed"]

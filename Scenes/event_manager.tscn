@@ -38,7 +38,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Generate event"
+text = "Deprecated button"
 
 [node name="HSeparator" type="HSeparator" parent="MainContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -113,7 +113,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Reset events"
+text = "Deprecated button"
 
 [node name="HSeparator2" type="HSeparator" parent="MainContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -143,6 +143,3 @@ layout_mode = 2
 
 [node name="AvailableEvents" parent="." instance=ExtResource("2_dpjx2")]
 position = Vector2(-150, 52.5)
-
-[connection signal="pressed" from="MainContainer/HBoxContainer/VBoxContainer2/GenerateEventButton" to="." method="_on_generate_event_button_pressed"]
-[connection signal="pressed" from="MainContainer/HBoxContainer/VBoxContainer/ResetEventsButton" to="." method="_on_reset_events_button_pressed"]
