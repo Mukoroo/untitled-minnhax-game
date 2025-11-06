@@ -17,14 +17,12 @@ func get_player_input() -> void:
 				print("Player chose 1")
 				$EpisodeManager/EventManager.playerChoice = "choice1"
 				print("break")
-				$EpisodeManager/EventManager.update_Debug_playerChoice_UI()
 				print("updating debug UI and player choice is: ", $EpisodeManager/EventManager.playerChoice)
 				$EpisodeManager.player_can_choose = false
 				$EpisodeManager.pull_event()
 			if Input.is_action_just_pressed("Choice2"):
 				print("Player chose 2")
 				$EpisodeManager/EventManager.playerChoice = "choice2"
-				$EpisodeManager/EventManager.update_Debug_playerChoice_UI()
 				print("updating debug UI and player choice is: ", $EpisodeManager/EventManager.playerChoice)
 				$EpisodeManager.player_can_choose = false
 				$EpisodeManager.pull_event()
