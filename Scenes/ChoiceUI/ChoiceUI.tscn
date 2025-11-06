@@ -1,0 +1,193 @@
+[gd_scene load_steps=10 format=3 uid="uid://daaouefdvfl0f"]
+
+[ext_resource type="Theme" uid="uid://75ebcssy4fou" path="res://Scenes/ChoiceUI/base_theme.tres" id="1_5knhl"]
+[ext_resource type="Script" uid="uid://cmeo56o2cwlur" path="res://Scenes/ChoiceUI/choice_ui.gd" id="1_15ard"]
+[ext_resource type="StyleBox" uid="uid://phfuuh440y76" path="res://Scenes/ChoiceUI/ChoiceUI Assets/metric_bar_stylebox.tres" id="1_heu41"]
+[ext_resource type="Texture2D" uid="uid://ca7f1mmvg06fn" path="res://Scenes/ChoiceUI/ChoiceUI Assets/white_square.png" id="2_pxf3y"]
+[ext_resource type="Texture2D" uid="uid://cnwatjv4afds3" path="res://Scenes/ChoiceUI/ChoiceUI Assets/t_bar_front_example.png" id="3_twly6"]
+[ext_resource type="Texture2D" uid="uid://b2261buo1gbfv" path="res://Scenes/ChoiceUI/ChoiceUI Assets/t_bar_back.png" id="4_n20mr"]
+[ext_resource type="PackedScene" uid="uid://bhmalr3e3l7nd" path="res://Scenes/ChoiceUI/Character Portrait/character_portrait.tscn" id="5_x0eyv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkqcl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7pep"]
+
+[node name="ChoiceUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5knhl")
+script = ExtResource("1_15ard")
+
+[node name="ColorBackground" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 111.0
+offset_right = 708.0
+offset_bottom = 537.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tkqcl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Top" type="PanelContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_heu41")
+
+[node name="TextureRect" type="ColorRect" parent="CenterContainer/PanelContainer/VBoxContainer/Top"]
+visible = false
+custom_minimum_size = Vector2(100, 48)
+layout_mode = 2
+color = Color(0.047058824, 0.08235294, 0.16470589, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Top"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Metrics" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer"]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics"]
+layout_mode = 2
+
+[node name="MetricProgress1" type="TextureProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+value = 45.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("2_pxf3y")
+texture_over = ExtResource("3_twly6")
+texture_progress = ExtResource("4_n20mr")
+
+[node name="LabelMetric1" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer"]
+layout_mode = 2
+text = "Metric"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics"]
+layout_mode = 2
+
+[node name="MetricProgress2" type="TextureProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+value = 45.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("2_pxf3y")
+texture_over = ExtResource("3_twly6")
+texture_progress = ExtResource("4_n20mr")
+
+[node name="LabelMetric2" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer2"]
+layout_mode = 2
+text = "Metric"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics"]
+layout_mode = 2
+
+[node name="MetricProgress3" type="TextureProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+value = 45.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("2_pxf3y")
+texture_over = ExtResource("3_twly6")
+texture_progress = ExtResource("4_n20mr")
+
+[node name="LabelMetric3" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer3"]
+layout_mode = 2
+text = "Metric"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics"]
+layout_mode = 2
+
+[node name="MetricProgress4" type="TextureProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+value = 45.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("2_pxf3y")
+texture_over = ExtResource("3_twly6")
+texture_progress = ExtResource("4_n20mr")
+
+[node name="LabelMetric4" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer4"]
+layout_mode = 2
+text = "Metric"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bottom" type="PanelContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x7pep")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer"]
+layout_mode = 2
+
+[node name="CharacterPortrait" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/CenterContainer" instance=ExtResource("5_x0eyv")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LabelEventText" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "\"Do you still love me?\""
+horizontal_alignment = 1
+
+[node name="HBoxChoices" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonChoice1" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Your mommy issues are too much"
+alignment = 0
+autowrap_mode = 2
+
+[node name="ButtonChoice2" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Let's merge with the lifestream together!"
+alignment = 0
+autowrap_mode = 2
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice1" to="." method="_on_button_choice_1_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice2" to="." method="_on_button_choice_2_pressed"]
