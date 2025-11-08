@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 	get_player_input()
 
 func get_player_input() -> void:
-	if episode_manager_loaded: ## TODO: Update to 'If we're in an episode'
+	if episode_manager_loaded:
 		if $EpisodeManager.player_can_choose:
 			if Input.is_action_just_pressed("Choice1"):
 				print("Player chose 1")
@@ -23,7 +23,9 @@ func get_player_input() -> void:
 				$EpisodeManager/EventManager.playerChoice = "choice2"
 				$EpisodeManager.player_can_choose = false
 				$EpisodeManager.pull_event()
-	if Input.is_action_just_pressed("Pause"): ## TODO: define and implement pause behaviour ## TODO: define in which states the player can and can't pause
+	if Input.is_action_just_pressed("Pause"): 
+		## TODO: define and implement pause behaviour 
+		## TODO: define in which states the player can and can't pause
 		print("Player paused")
 
 
