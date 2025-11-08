@@ -10,17 +10,20 @@ var playerChoice = ""
 
 func _ready() -> void:
 	print("Event manager ready")
-
+	
 
 func generate_event():
+	## When an event is needed
+	# Choose a random event from the deck
 	pick_event()
+	# Instantiate it as a scene. ##TODO: Check if this is really needed in current implementation
 	var event = event_scene.instantiate() ##TODO: set relevant details in the Event scene from the picked event
 	$Events.add_child(event)
+	# Update the choice UI with the event details
 	$".."/ChoiceUI.fill_event_ui()
 	
 
 func pick_event():
-	print("Picking event")
 	## Pick a random event, then remove it from the deck of events, so we don't get repeat picks
 	if len(availableEvents) > 0:
 		pickedEvent = availableEvents.pick_random()
@@ -29,10 +32,11 @@ func pick_event():
 		#playerChoice = "" ## DEBUG: Why is this here? This is causing playerChoice to reset
 		## This probably DOES need to clear player choice at some point after the event picks. Just not instantly
 	else:
-		push_error("No available events left in event_manager availableEvents") ## Should only throw this error if the player speeds through all available events in too short a time. We need enough events to cover this.
+		# Throw an error if there are no events left in the deck
+		push_error("No available events left in event_manager availableEvents") ## Should only throw if the player speeds through all available events in too short a time. We need enough events to make this impossible to happen in normal play.
 		
 func reset_events():
-	### Reset the deck, get the full list of events from available_events.tscn
+	## Reset the deck, get the full list of events from available_events.tscn
 	print("Resetting events")
 	availableEvents = $AvailableEvents.availableEvents.duplicate(true)
 	

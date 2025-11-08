@@ -44,13 +44,11 @@ func blank_event_ui():
 #On Choice made, emit signal to inform next step of process
 #Event Manager?
 func _on_button_choice_1_pressed() -> void:
-	print("button choice 1 pressed")
-	Input.action_press("Choice1") ## Absolute hack, but works while keeping controller support intact
+	Input.action_press("Choice1") ## This is a hack, but works while keeping controller support intact in game.gd
 	Input.action_release("Choice1")
 
 
 
 func _on_button_choice_2_pressed() -> void:
-	print("button choice 2 pressed")
-	Input.action_press("Choice2") ## Absolute hack, but works while keeping controller support intact
+	Input.action_press("Choice2") ## This is a hack, but works while keeping controller support intact in game.gd
 	Input.action_release("Choice2") 

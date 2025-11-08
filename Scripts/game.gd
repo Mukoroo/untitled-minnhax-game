@@ -16,14 +16,11 @@ func get_player_input() -> void:
 			if Input.is_action_just_pressed("Choice1"):
 				print("Player chose 1")
 				$EpisodeManager/EventManager.playerChoice = "choice1"
-				print("break")
-				print("updating debug UI and player choice is: ", $EpisodeManager/EventManager.playerChoice)
 				$EpisodeManager.player_can_choose = false
 				$EpisodeManager.pull_event()
 			if Input.is_action_just_pressed("Choice2"):
 				print("Player chose 2")
 				$EpisodeManager/EventManager.playerChoice = "choice2"
-				print("updating debug UI and player choice is: ", $EpisodeManager/EventManager.playerChoice)
 				$EpisodeManager.player_can_choose = false
 				$EpisodeManager.pull_event()
 	if Input.is_action_just_pressed("Pause"): ## TODO: define and implement pause behaviour ## TODO: define in which states the player can and can't pause
