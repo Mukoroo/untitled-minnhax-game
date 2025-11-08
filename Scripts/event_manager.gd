@@ -10,7 +10,6 @@ var playerChoice = ""
 
 func _ready() -> void:
 	print("Event manager ready")
-	#$MainContainer/HBoxContainer/VBoxContainer/RemainingEvents/Label2.text = str(len(availableEvents)) ## TEMP
 
 
 func generate_event():
