@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhuab7pveqav8"]
+[gd_scene load_steps=2 format=3 uid="uid://bhuab7pveqav8"]
 
 [ext_resource type="Script" uid="uid://cwdo4a6nxi3lg" path="res://Scripts/event_manager.gd" id="1_fjx5v"]
-[ext_resource type="PackedScene" uid="uid://diqgwioilj5m8" path="res://Scenes/available_events.tscn" id="2_dpjx2"]
 
 [node name="EventManager" type="Node2D"]
 script = ExtResource("1_fjx5v")
 
 [node name="Events" type="Node2D" parent="."]
-
-[node name="AvailableEvents" parent="." instance=ExtResource("2_dpjx2")]
-position = Vector2(-150, 52.5)

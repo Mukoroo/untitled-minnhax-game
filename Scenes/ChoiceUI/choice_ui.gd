@@ -4,6 +4,8 @@ extends Control
 @onready var metric_progress_2: TextureProgressBar = %MetricProgress2
 @onready var metric_progress_3: TextureProgressBar = %MetricProgress3
 @onready var metric_progress_4: TextureProgressBar = %MetricProgress4
+@onready var button_choice_1: Button = %ButtonChoice1
+@onready var button_choice_2: Button = %ButtonChoice2
 
 @onready var label_event_text: Label = %LabelEventText
 
@@ -25,20 +27,19 @@ func update_metrics():
 
 
 
-#Grab Picked Event and fill out ChoiceUI with the correct info!
-func fill_event_ui():
-	#Fill in Character Portrait with correct Image
-	#character_portrait.
-	%LabelEventText.text = $".."/EventManager.pickedEvent.description
-	$CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice1.text = $".."/EventManager.pickedEvent.choice1
-	$CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice2.text = $".."/EventManager.pickedEvent.choice2
-	pass
+#Is given Picked Event and fill out ChoiceUI with the correct info!
+func fill_event_ui(picked_event : Event):
+	#Use Picked Event information to fill out info!
+	
+	label_event_text.text = picked_event.description
+	%ButtonChoice1.text = picked_event.choice_1_text
+	%ButtonChoice2.text = picked_event.choice_2_text
 
 func blank_event_ui():
 	# Set ChoiceUI with blank details on first load
 	%LabelEventText.text = ""
-	$CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice1.text = ""
-	$CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice2.text = ""
+	%ButtonChoice1.text = ""
+	%ButtonChoice2.text = ""
 	
 ##Choice Button Signal Connections
 #On Choice made, emit signal to inform next step of process

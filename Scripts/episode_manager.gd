@@ -42,6 +42,7 @@ func _on_episode_timer_timeout() -> void:
 	# Set the event deck back to a clean copy
 	reset_events()
 
+
 func pull_event():
 	# Serve up an event from the deck and enable player input
 	if timer.time_left:
