@@ -21,9 +21,13 @@ func _ready() -> void:
 	metric_progress_4.value = 45
 
 
-func update_metrics(player_choice):
 	#Update Progress #TODO: Link to eventual Metric Counter
-	## 1,2,3,4 = Passion, Emotion, Spectacle, Drama
+func update_metrics(player_choice):
+	## When player chooses a response, update the metrics UI
+	# player_choice passed from game.gd, as 1 or 2
+	# effects read from event object, taken from CSV import
+	# 1,2,3,4 = Passion, Emotion, Spectacle, Drama
+	
 	if(player_choice == 1):
 		metric_progress_1.value += Globals.picked_event.choice_1_passion_effect
 		metric_progress_2.value += Globals.picked_event.choice_1_emotion_effect
