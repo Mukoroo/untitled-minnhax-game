@@ -4,6 +4,8 @@ extends Node2D
 var episode_manager_scene = preload("res://Scenes/episode_manager.tscn")
 var episode_manager_loaded = false
 
+var summary_ui_scene = preload("res://Scenes/SummaryUI/summary_ui.tscn")
+
 func _ready() -> void:
 	print("Game ready")
 
@@ -34,3 +36,14 @@ func _on_go_to_episode_pressed() -> void:
 	var episode_manager = episode_manager_scene.instantiate()
 	add_child(episode_manager)
 	episode_manager_loaded = true
+	
+	#Connect signal from EpisodeManager to End Episode function
+	episode_manager.end_episode.connect(_on_end_episode_pressed)
+
+func _on_end_episode_pressed() -> void:
+	var summary_ui = summary_ui_scene.instantiate()
+	$CanvasLayerUI.add_child(summary_ui)
+	
+	#TODO: Basic Function for the when Summary is over to move to the next Episode!
+	summary_ui.summary_done.connect(func(): print("NEXT EPISODE"))
+	

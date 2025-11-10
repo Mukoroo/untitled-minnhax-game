@@ -4,6 +4,7 @@ var event_manager_scene = preload("res://Scenes/event_manager.tscn")
 var event_manager_loaded = false
 var player_can_choose = false
 
+signal end_episode
 
 @onready var timer = $EpisodeTimer
 
@@ -41,6 +42,10 @@ func _on_episode_timer_timeout() -> void:
 	player_can_choose = false
 	# Set the event deck back to a clean copy
 	reset_events()
+	
+	#Send Signal to Game scene when timer is up
+	end_episode.emit()
+	
 
 
 func pull_event():

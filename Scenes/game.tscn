@@ -42,4 +42,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Go to episode"
 
+[node name="CanvasLayerUI" type="CanvasLayer" parent="."]
+
 [connection signal="pressed" from="DEBUGAspectRatioContainer/Control2/VBoxContainer/GoToEpisode" to="." method="_on_go_to_episode_pressed"]

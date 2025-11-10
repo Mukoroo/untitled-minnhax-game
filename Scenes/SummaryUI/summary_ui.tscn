@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqlgp2jtvgxls"]
+
+[ext_resource type="Script" uid="uid://c44u5d37h1l65" path="res://Scenes/SummaryUI/summary_ui.gd" id="1_anngr"]
+[ext_resource type="Theme" uid="uid://75ebcssy4fou" path="res://Scenes/ChoiceUI/base_theme.tres" id="1_sdc4a"]
+
+[node name="SummaryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sdc4a")
+script = ExtResource("1_anngr")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxTotal" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="LabelSummaryTitle" type="Label" parent="CenterContainer/VBoxTotal"]
+layout_mode = 2
+text = "EPISODE 1 SUMMARY"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxTotal"]
+layout_mode = 2
+
+[node name="LabelDrama" type="Label" parent="CenterContainer/VBoxTotal/VBoxContainer"]
+layout_mode = 2
+text = "Drama level is X"
+horizontal_alignment = 1
+
+[node name="LabelPassion" type="Label" parent="CenterContainer/VBoxTotal/VBoxContainer"]
+layout_mode = 2
+text = "Passion level is X"
+horizontal_alignment = 1
+
+[node name="LabelEmotion" type="Label" parent="CenterContainer/VBoxTotal/VBoxContainer"]
+layout_mode = 2
+text = "Emotion level is X"
+horizontal_alignment = 1
+
+[node name="LabelSpectacle" type="Label" parent="CenterContainer/VBoxTotal/VBoxContainer"]
+layout_mode = 2
+text = "Spectacle level is X"
+horizontal_alignment = 1
+
+[node name="ButtonNext" type="Button" parent="CenterContainer/VBoxTotal"]
+layout_mode = 2
+text = "NEXT"
+
+[connection signal="pressed" from="CenterContainer/VBoxTotal/ButtonNext" to="." method="_on_button_next_pressed"]

@@ -11,12 +11,9 @@ extends Control
 
 @onready var character_portrait: PanelContainer = %CharacterPortrait
 
+
 func _ready() -> void:
 	blank_event_ui()
-	pass
-
-#Connect To Event Manager
-
 
 func update_metrics():
 	#Update Progress #TODO: Link to eventual Metric Counter
