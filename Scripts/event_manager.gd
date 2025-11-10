@@ -27,7 +27,7 @@ func generate_event():
 	# Instantiate it as a scene. ##TODO: Check if this is really needed in current implementation
 	var event = event_scene.instantiate() ##TODO: set relevant details in the Event scene from the picked event
 	$Events.add_child(event)
-	
+	Globals.picked_event = pickedEvent
 	
 	# Update the choice UI with the event details
 	#Sends Picked Event to ChoiceUI so that ChoiceUI can have access to all Event information
