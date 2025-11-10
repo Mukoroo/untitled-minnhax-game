@@ -14,13 +14,27 @@ extends Control
 
 func _ready() -> void:
 	blank_event_ui()
-
-func update_metrics():
-	#Update Progress #TODO: Link to eventual Metric Counter
+	## Set initial value for metrics
 	metric_progress_1.value = 45
 	metric_progress_2.value = 45
 	metric_progress_3.value = 45
 	metric_progress_4.value = 45
+
+
+func update_metrics(player_choice):
+	#Update Progress #TODO: Link to eventual Metric Counter
+	## 1,2,3,4 = Passion, Emotion, Spectacle, Drama
+	if(player_choice == 1):
+		metric_progress_1.value += Globals.picked_event.choice_1_passion_effect
+		metric_progress_2.value += Globals.picked_event.choice_1_emotion_effect
+		metric_progress_3.value += Globals.picked_event.choice_1_spectacle_effect
+		metric_progress_4.value += Globals.picked_event.choice_1_drama_effect
+	
+	if(player_choice == 2):
+		metric_progress_1.value += Globals.picked_event.choice_2_passion_effect
+		metric_progress_2.value += Globals.picked_event.choice_2_emotion_effect
+		metric_progress_3.value += Globals.picked_event.choice_2_spectacle_effect
+		metric_progress_4.value += Globals.picked_event.choice_2_drama_effect
 
 
 
@@ -39,13 +53,10 @@ func blank_event_ui():
 	%ButtonChoice2.text = ""
 	
 ##Choice Button Signal Connections
-#On Choice made, emit signal to inform next step of process
-#Event Manager?
+# On choice button pressed, trigger player selection behaviour in game.gd
 func _on_button_choice_1_pressed() -> void:
 	Input.action_press("Choice1") ## This is a hack, but works while keeping controller support intact in game.gd
 	Input.action_release("Choice1")
-
-
 
 func _on_button_choice_2_pressed() -> void:
 	Input.action_press("Choice2") ## This is a hack, but works while keeping controller support intact in game.gd
