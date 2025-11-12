@@ -85,7 +85,7 @@ texture_progress = ExtResource("4_n20mr")
 
 [node name="LabelMetric1" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer"]
 layout_mode = 2
-text = "Metric"
+text = "Passion"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -105,7 +105,7 @@ texture_progress = ExtResource("4_n20mr")
 
 [node name="LabelMetric2" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer2"]
 layout_mode = 2
-text = "Metric"
+text = "Emotion"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -125,7 +125,7 @@ texture_progress = ExtResource("4_n20mr")
 
 [node name="LabelMetric3" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer3"]
 layout_mode = 2
-text = "Metric"
+text = "Spectacle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -145,7 +145,7 @@ texture_progress = ExtResource("4_n20mr")
 
 [node name="LabelMetric4" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Top/MarginContainer/Metrics/VBoxContainer4"]
 layout_mode = 2
-text = "Metric"
+text = "Drama"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -166,27 +166,29 @@ layout_mode = 2
 
 [node name="LabelEventText" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 20)
 layout_mode = 2
-text = "\"Do you still love me?\""
+text = "\"Do you still love me?\" "
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="HBoxChoices" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
 
 [node name="ButtonChoice1" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 text = "Your mommy issues are too much"
 alignment = 0
 autowrap_mode = 2
 
 [node name="ButtonChoice2" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 text = "Let's merge with the lifestream together!"
 alignment = 0
 autowrap_mode = 2

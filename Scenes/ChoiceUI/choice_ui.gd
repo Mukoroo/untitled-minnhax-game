@@ -14,31 +14,19 @@ extends Control
 
 func _ready() -> void:
 	blank_event_ui()
+	# 1,2,3,4 = Passion, Emotion, Spectacle, Drama
 	## Set initial value for metrics
-	metric_progress_1.value = 45
-	metric_progress_2.value = 45
-	metric_progress_3.value = 45
-	metric_progress_4.value = 45
+	update_metrics()
 
 
-	#Update Progress #TODO: Link to eventual Metric Counter
-func update_metrics(player_choice):
-	## When player chooses a response, update the metrics UI
-	# player_choice passed from game.gd, as 1 or 2
-	# effects read from event object, taken from CSV import
+#Now linked to Global, pulls variables, updates amounts.
+func update_metrics():
 	# 1,2,3,4 = Passion, Emotion, Spectacle, Drama
 	
-	if(player_choice == 1):
-		metric_progress_1.value += Globals.picked_event.choice_1_passion_effect
-		metric_progress_2.value += Globals.picked_event.choice_1_emotion_effect
-		metric_progress_3.value += Globals.picked_event.choice_1_spectacle_effect
-		metric_progress_4.value += Globals.picked_event.choice_1_drama_effect
-	
-	if(player_choice == 2):
-		metric_progress_1.value += Globals.picked_event.choice_2_passion_effect
-		metric_progress_2.value += Globals.picked_event.choice_2_emotion_effect
-		metric_progress_3.value += Globals.picked_event.choice_2_spectacle_effect
-		metric_progress_4.value += Globals.picked_event.choice_2_drama_effect
+	metric_progress_1.value = Globals.current_passion
+	metric_progress_2.value = Globals.current_emotion
+	metric_progress_3.value = Globals.current_spectacle
+	metric_progress_4.value = Globals.current_drama
 
 
 

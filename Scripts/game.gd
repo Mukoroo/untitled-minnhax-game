@@ -19,13 +19,15 @@ func get_player_input() -> void:
 				print("Player chose 1")
 				$EpisodeManager/EventManager.playerChoice = "choice1"
 				$EpisodeManager.player_can_choose = false
-				$EpisodeManager/ChoiceUI.update_metrics(1)
+				Globals.player_chose_choice_1()
+				$EpisodeManager/ChoiceUI.update_metrics()
 				$EpisodeManager.pull_event()
 			if Input.is_action_just_pressed("Choice2"):
 				print("Player chose 2")
 				$EpisodeManager/EventManager.playerChoice = "choice2"
 				$EpisodeManager.player_can_choose = false
-				$EpisodeManager/ChoiceUI.update_metrics(2)
+				Globals.player_chose_choice_2()
+				$EpisodeManager/ChoiceUI.update_metrics()
 				$EpisodeManager.pull_event()
 	if Input.is_action_just_pressed("Pause"): 
 		## TODO: define and implement pause behaviour 
