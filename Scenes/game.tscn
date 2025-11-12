@@ -16,12 +16,12 @@ offset_bottom = 282.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control2" type="Control" parent="DEBUGAspectRatioContainer"]
+[node name="TutorialContainer" type="Control" parent="DEBUGAspectRatioContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DEBUGAspectRatioContainer/Control2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DEBUGAspectRatioContainer/TutorialContainer"]
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -37,11 +37,26 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="GoToEpisode" type="Button" parent="DEBUGAspectRatioContainer/Control2/VBoxContainer"]
+[node name="ProducerTutorialText" type="RichTextLabel" parent="DEBUGAspectRatioContainer/TutorialContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "default producer tutorial text"
+fit_content = true
+
+[node name="VBoxButtonsContainer" type="VBoxContainer" parent="DEBUGAspectRatioContainer/TutorialContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TutorialNext" type="Button" parent="DEBUGAspectRatioContainer/TutorialContainer/VBoxContainer/VBoxButtonsContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Go to episode"
+text = "Yeah, please explain"
+
+[node name="SkipTutorial" type="Button" parent="DEBUGAspectRatioContainer/TutorialContainer/VBoxContainer/VBoxButtonsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "I've seen the show enough to know how it works (skip tutorial)"
 
 [node name="CanvasLayerUI" type="CanvasLayer" parent="."]
 
-[connection signal="pressed" from="DEBUGAspectRatioContainer/Control2/VBoxContainer/GoToEpisode" to="." method="_on_go_to_episode_pressed"]
+[connection signal="pressed" from="DEBUGAspectRatioContainer/TutorialContainer/VBoxContainer/VBoxButtonsContainer/TutorialNext" to="." method="_on_tutorial_next_pressed"]
+[connection signal="pressed" from="DEBUGAspectRatioContainer/TutorialContainer/VBoxContainer/VBoxButtonsContainer/SkipTutorial" to="." method="_on_skip_tutorial_pressed"]

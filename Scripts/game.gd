@@ -6,8 +6,13 @@ var episode_manager_loaded = false
 
 var summary_ui_scene = preload("res://Scenes/SummaryUI/summary_ui.tscn")
 
+@onready var prod_text = producer_text.new()
+@onready var tutorial_step: int = 0
+
 func _ready() -> void:
 	print("Game ready")
+	## Get producer's tutorial text and set initial dialog for first step of tutorial
+	$DEBUGAspectRatioContainer/TutorialContainer/VBoxContainer/ProducerTutorialText.text = prod_text.tutorial_text[tutorial_step]
 
 func _process(_delta: float) -> void:
 	get_player_input()
@@ -34,9 +39,36 @@ func get_player_input() -> void:
 		## TODO: define in which states the player can and can't pause
 		print("Player paused")
 
+## HANDLING THE TUTORIAL ##
 
-func _on_go_to_episode_pressed() -> void:
+## Player chooses tutorial
+func _on_tutorial_next_pressed() -> void:
+	# Hide the SkipTutorial button
+	$DEBUGAspectRatioContainer/TutorialContainer/VBoxContainer/VBoxButtonsContainer/SkipTutorial.hide()
+	# Variable for TutorialNext button
+	var TutorialNext = $DEBUGAspectRatioContainer/TutorialContainer/VBoxContainer/VBoxButtonsContainer/TutorialNext
+	# Increment step, used for tracking where in the tutorial we are
+	tutorial_step += 1
+	
+	## Amend text on TutorialNext button
+	if (tutorial_step == 1):
+		TutorialNext.text = "Sounds easy!"
+	if (tutorial_step == 2):
+		TutorialNext.text = "Okay, I will"
+	if (tutorial_step == 3):
+		TutorialNext.text = "I'm ready, let's go!"
+	
+	## For steps prior to final step, update producer dialog text
+	if(tutorial_step < 4):
+		$DEBUGAspectRatioContainer/TutorialContainer/VBoxContainer/ProducerTutorialText.text = prod_text.tutorial_text[tutorial_step]
+	## When on final step, load episode, exactly as SkipTutorial button does
+	else:
+		_on_skip_tutorial_pressed()
+
+func _on_skip_tutorial_pressed() -> void:
+	## Remove tutorial UI
 	$DEBUGAspectRatioContainer.queue_free()
+	## Instantiate episode manager and have it load episodes
 	var episode_manager = episode_manager_scene.instantiate()
 	add_child(episode_manager)
 	episode_manager_loaded = true
@@ -50,4 +82,3 @@ func _on_end_episode_pressed() -> void:
 	
 	#TODO: Basic Function for the when Summary is over to move to the next Episode!
 	summary_ui.summary_done.connect(func(): print("NEXT EPISODE"))
-	

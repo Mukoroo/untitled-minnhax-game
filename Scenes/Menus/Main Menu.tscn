@@ -32,7 +32,7 @@ offset_right = 324.0
 offset_bottom = 88.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 64
-text = "Game title"
+text = "Maximum Drama!"
 horizontal_alignment = 1
 
 [node name="Control2" type="Control" parent="AspectRatioContainer"]
