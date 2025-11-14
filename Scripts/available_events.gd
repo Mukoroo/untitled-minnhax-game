@@ -36,7 +36,6 @@ func load_csv_as_array(csv_path : String, ) -> Array[Event]:
 		return read_events
 	
 	#Iterate over each line of csv and append it
-	#TODO: Format each line's data into an array of resources
 	while not file.eof_reached():
 		var line = file.get_line()
 		#print("LINE")

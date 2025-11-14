@@ -33,21 +33,25 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="LabelDrama" type="Label" parent="CenterContainer/VBoxTotal/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Drama level is X"
 horizontal_alignment = 1
 
 [node name="LabelPassion" type="Label" parent="CenterContainer/VBoxTotal/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Passion level is X"
 horizontal_alignment = 1
 
 [node name="LabelEmotion" type="Label" parent="CenterContainer/VBoxTotal/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Emotion level is X"
 horizontal_alignment = 1
 
 [node name="LabelSpectacle" type="Label" parent="CenterContainer/VBoxTotal/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Spectacle level is X"
 horizontal_alignment = 1

@@ -43,6 +43,7 @@ func blank_event_ui():
 	%LabelEventText.text = ""
 	%ButtonChoice1.text = ""
 	%ButtonChoice2.text = ""
+	hover_choice_button(1, false)
 	
 ##Choice Button Signal Connections
 # On choice button pressed, trigger player selection behaviour in game.gd
@@ -53,3 +54,88 @@ func _on_button_choice_1_pressed() -> void:
 func _on_button_choice_2_pressed() -> void:
 	Input.action_press("Choice2") ## This is a hack, but works while keeping controller support intact in game.gd
 	Input.action_release("Choice2") 
+
+
+##Choice Button Hovering Effects
+# 1,2,3,4 = Passion, Emotion, Spectacle, Drama
+#Function for making Hint buttons for when making Choices pop up
+func hover_choice_button(choice_1_or_2 : int, should_show_effect : bool):
+	if should_show_effect:
+		match choice_1_or_2:
+			1:
+				if Globals.picked_event.choice_1_passion_effect > 0:
+					%TextureRectMinnMax1.visible = true
+					#%TextureRectMinnMax1.flip_v = false
+				elif Globals.picked_event.choice_1_passion_effect < 0:
+					%TextureRectMinnMax1.visible = true
+					#%TextureRectMinnMax1.flip_v = true
+					
+				if Globals.picked_event.choice_1_emotion_effect > 0:
+					%TextureRectMinnMax2.visible = true
+					#%TextureRectMinnMax2.flip_v = false
+				elif Globals.picked_event.choice_1_emotion_effect < 0:
+					%TextureRectMinnMax2.visible = true
+					#%TextureRectMinnMax2.flip_v = true
+					
+				if Globals.picked_event.choice_1_spectacle_effect > 0:
+					%TextureRectMinnMax3.visible = true
+					#%TextureRectMinnMax3.flip_v = false
+				elif Globals.picked_event.choice_1_spectacle_effect < 0:
+					%TextureRectMinnMax3.visible = true
+					#%TextureRectMinnMax3.flip_v = true
+					
+				if Globals.picked_event.choice_1_drama_effect > 0: 
+					%TextureRectMinnMax4.visible = true
+					#%TextureRectMinnMax4.flip_v = false
+				elif Globals.picked_event.choice_1_drama_effect < 0:
+					%TextureRectMinnMax4.visible = true
+					#%TextureRectMinnMax4.flip_v = true
+			2:
+				if Globals.picked_event.choice_2_passion_effect > 0:
+					%TextureRectMinnMax1.visible = true
+					#%TextureRectMinnMax1.flip_v = false
+				elif Globals.picked_event.choice_2_passion_effect < 0:
+					%TextureRectMinnMax1.visible = true
+					#%TextureRectMinnMax1.flip_v = true
+					
+				if Globals.picked_event.choice_2_emotion_effect > 0:
+					%TextureRectMinnMax2.visible = true
+					#%TextureRectMinnMax2.flip_v = false
+				elif Globals.picked_event.choice_2_emotion_effect < 0:
+					%TextureRectMinnMax2.visible = true
+					#%TextureRectMinnMax2.flip_v = true
+					
+				if Globals.picked_event.choice_2_spectacle_effect > 0:
+					%TextureRectMinnMax3.visible = true
+					#%TextureRectMinnMax3.flip_v = false
+				elif Globals.picked_event.choice_2_spectacle_effect < 0:
+					%TextureRectMinnMax3.visible = true
+					#%TextureRectMinnMax3.flip_v = true
+					
+				if Globals.picked_event.choice_2_drama_effect > 0: 
+					%TextureRectMinnMax4.visible = true
+					#%TextureRectMinnMax4.flip_v = false
+				elif Globals.picked_event.choice_2_drama_effect < 0:
+					%TextureRectMinnMax4.visible = true
+					#%TextureRectMinnMax4.flip_v = true
+	
+	elif !should_show_effect:
+		%TextureRectMinnMax1.visible = false
+		%TextureRectMinnMax2.visible = false
+		%TextureRectMinnMax3.visible = false
+		%TextureRectMinnMax4.visible = false
+
+func _on_button_choice_1_mouse_entered() -> void:
+	hover_choice_button(1, true)
+
+
+func _on_button_choice_1_mouse_exited() -> void:
+	hover_choice_button(1, false)
+
+
+func _on_button_choice_2_mouse_entered() -> void:
+	hover_choice_button(2, true)
+
+
+func _on_button_choice_2_mouse_exited() -> void:
+	hover_choice_button(2, false)
