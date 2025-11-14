@@ -33,10 +33,10 @@ grow_vertical = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_left = 444.0
-offset_top = 111.0
-offset_right = 708.0
-offset_bottom = 537.0
+offset_left = 388.0
+offset_top = 87.0
+offset_right = 755.0
+offset_bottom = 526.0
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
 layout_mode = 2
