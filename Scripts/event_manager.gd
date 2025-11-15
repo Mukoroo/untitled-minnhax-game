@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var csv_file_path: String = "res://Resources/DropCSVHere/Maximum Drama Events - Sheet1(4).csv"
+@onready var csv_file_path: String = "res://Resources/DropCSVHere/Maximum Drama Events - Sheet1(5).csv"
 
 var event_scene = preload("res://Scenes/event.tscn")
 

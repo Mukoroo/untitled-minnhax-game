@@ -5,15 +5,15 @@ Instead of using Commas please use semi-colons"";""!",,,,,,,,,,,,
 ,,,,,Metric Effects (+/- 10 +/- 20 +/- 30),,,,,Metric Effects (+/- 10 +/- 20 +/- 30),,,
 Description,Event Name,Event Type,Event Description,Choice 1 Text,Choice 1 Passion,Choice 1 Emotion,Choice 1 Spectacle,Choice 1 Drama,Choice 2 Text,Choice 2 Passion,Choice 2 Emotion,Choice 2 Spectacle,Choice 2 Drama
 Variable Type,String,Choose Opt,String,String,Integer,Integer,Integer,Integer,String,Integer,Integer,Integer,Integer
-TRUE,Birthday,Personal,It's my birthday; get me a present!,Something home made,-5,-10,10,20,Something expensive,0,0,0,0
-TRUE,WorkLate,Generic,I have to work late again tonight,Are you cheating?,-5,0,0,0,You work so hard!,10,10,10,10
-TRUE,Vacation,Personal,My friends want me to come on vacation with them,Have a great break!,-5,0,0,0,No way; I'll take you somewhere!,0,0,0,0
-TRUE,Pet,Generic,I want a pet!,That'll be so cute!,-5,0,0,0,That'll be so much work!,0,0,0,0
-TRUE,SephirothLove,Personal,Do you still love me?,Your mommy issues are too much,-5,0,0,0,Let's merge with the lifestream...together!,10,0,0,0
-TRUE,WeddingPlus1,Generic,Will you be my +1 to my cousin's wedding?,That sounds wonderful!,-5,0,0,0,That sounds like a living hell!,0,0,0,0
-TRUE,Parents,Generic,My parents want to meet you,Let's go to dinner,-5,0,0,0,Let's go do karaoke,0,0,0,0
-TRUE,RobinHood,Generic,I just stole Elon Musk's bitcoin wallet,Let's redistribute that wealth; comrade!,-5,0,0,0,Hello; officer? Yes; this one right here!,0,0,0,0
-TRUE,Gambling,Generic,I've started playing high stakes poker and I feel like I have to keep chasing those wins,All in! I'll start shopping for five star hotel breaks!,-5,0,0,0,Maybe you should ease off if it stops being fun,0,0,0,0
+TRUE,Birthday,Personal,It's my birthday; get me a present!,Something home made,0,10,-10,-10,Something expensive,0,-10,10,0
+TRUE,WorkLate,Generic,I have to work late again tonight,Are you cheating?,0,-20,0,20,You work so hard!,10,0,0,-10
+TRUE,Vacation,Personal,My friends want me to come on vacation with them.,Have a great break!,0,10,0,0,No way; I'll take you somewhere!,10,0,0,0
+TRUE,Pet,Generic,I want a pet!,That'll be so cute!,10,0,0,0,That'll be so much work!,0,-10,-10,10
+TRUE,SephirothLove,Personal,Do you still love me?,Your mommy issues are too much,0,0,0,0,Let's merge with the lifestream...together!,0,0,0,0
+TRUE,WeddingPlus1,Generic,Will you be my +1 to my cousin's wedding?,That sounds wonderful!,0,10,0,0,That sounds like a living hell!,0,-10,0,20
+TRUE,Parents,Generic,My parents want to meet you.,Let's go to dinner,10,10,0,0,Let's go do karaoke,0,-10,10,10
+TRUE,RobinHood,Generic,I just stole Elon Musk's bitcoin wallet.,Let's redistribute that wealth; comrade!,0,0,20,0,Hello; officer? Yes; this one right here!,0,0,0,20
+TRUE,Gambling,Generic,I've started playing high stakes poker and I feel like I have to keep chasing those wins.,All in! I'll start shopping for five star hotel breaks!,0,0,10,10,Maybe you should ease off if it stops being fun,10,0,0,0
 FALSE,,,,,0,0,0,0,,0,0,0,0
 FALSE,,,,,0,0,0,0,,0,0,0,0
 FALSE,,,,,0,0,0,0,,0,0,0,0
