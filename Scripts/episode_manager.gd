@@ -17,6 +17,8 @@ func _process(_delta: float) -> void:
 	if timer.time_left:
 		$HBoxContainer/TimeRemainingLabel2.text = str(ceil(timer.time_left))
 		## TODO: actively listening for player input, else stop listening for that input
+	
+	$ChoiceUI.timer_amt = timer.time_left
 
 func _on_start_ep_button_pressed() -> void:
 	## At the start of every episode

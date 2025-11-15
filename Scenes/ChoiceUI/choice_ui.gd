@@ -10,7 +10,17 @@ extends Control
 @onready var label_event_text: Label = %LabelEventText
 
 @onready var character_portrait: PanelContainer = %CharacterPortrait
+@onready var progress_bar_time_left: TextureProgressBar = %ProgressBarTimeLeft
+@onready var label_episode: Label = %LabelEpisode
 
+@onready var particle_1: CPUParticles2D = %Particle1
+@onready var particle_2: CPUParticles2D = %Particle2
+@onready var particle_3: CPUParticles2D = %Particle3
+@onready var particle_4: CPUParticles2D = %Particle4
+
+
+#Timer value that is set from the EpisodeManager
+var timer_amt : float
 
 func _ready() -> void:
 	blank_event_ui()
@@ -18,11 +28,28 @@ func _ready() -> void:
 	## Set initial value for metrics
 	update_metrics()
 
+func _process(_delta: float) -> void:
+	#TODO - Update to 60
+	progress_bar_time_left.value = 15-timer_amt
+	label_episode.text = "EPISODE " + str(Globals.episode_number)
 
 #Now linked to Global, pulls variables, updates amounts.
 func update_metrics():
 	# 1,2,3,4 = Passion, Emotion, Spectacle, Drama
 	
+	if metric_progress_1.value != Globals.current_passion:
+		metric_progress_1.value = Globals.current_passion
+		particle_1.emitting = true
+	if metric_progress_2.value != Globals.current_emotion:
+		metric_progress_2.value = Globals.current_emotion
+		particle_2.emitting = true
+	if metric_progress_3.value != Globals.current_spectacle:
+		metric_progress_3.value = Globals.current_spectacle
+		particle_3.emitting = true
+	if metric_progress_4.value != Globals.current_drama:
+		metric_progress_4.value = Globals.current_drama
+		particle_4.emitting = true
+		
 	metric_progress_1.value = Globals.current_passion
 	metric_progress_2.value = Globals.current_emotion
 	metric_progress_3.value = Globals.current_spectacle

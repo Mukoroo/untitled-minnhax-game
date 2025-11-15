@@ -1,5 +1,7 @@
 extends Node2D
 
+var episode_number : int = 1
+
 var picked_event : Event
 
 # 1,2,3,4 = Passion, Emotion, Spectacle, Drama
@@ -36,3 +38,9 @@ func player_chose_choice_2():
 	add_to_emotion(picked_event.choice_2_emotion_effect)
 	add_to_spectacle(picked_event.choice_2_spectacle_effect)
 	add_to_drama(picked_event.choice_2_drama_effect)
+
+######################
+#Functions for Episode updates
+func update_episode_number() -> int:
+	episode_number += 1
+	return episode_number

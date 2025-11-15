@@ -81,4 +81,11 @@ func _on_end_episode_pressed() -> void:
 	$CanvasLayerUI.add_child(summary_ui)
 	
 	#TODO: Basic Function for the when Summary is over to move to the next Episode!
-	summary_ui.summary_done.connect(func(): print("NEXT EPISODE"))
+	summary_ui.summary_done.connect(on_summary_ui_summary_done)
+
+#Called when SummaryUI is done
+func on_summary_ui_summary_done():
+	print("NEXT EPISODE")
+	#SummaryUI is automatically Destroyed WITHIN SUMMARYUI
+	
+	

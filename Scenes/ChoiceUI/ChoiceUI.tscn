@@ -14,11 +14,7 @@
 
 [node name="ChoiceUI" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 theme = ExtResource("1_5knhl")
 script = ExtResource("1_15ard")
 
@@ -224,6 +220,113 @@ size_flags_horizontal = 3
 text = "Let's merge with the lifestream together!"
 alignment = 0
 autowrap_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 497.0
+offset_right = 655.0
+offset_bottom = 69.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="LabelEpisode" type="Label" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "EPISODE 1"
+horizontal_alignment = 1
+
+[node name="ProgressBarTimeLeft" type="TextureProgressBar" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+max_value = 15.0
+step = 0.25
+nine_patch_stretch = true
+texture_under = ExtResource("2_pxf3y")
+texture_progress = ExtResource("4_n20mr")
+
+[node name="Particle1" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(428, 142)
+emitting = false
+amount = 5
+texture = ExtResource("4_15ard")
+lifetime = 0.7
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 120.0
+angular_velocity_min = -46.45
+angular_velocity_max = 83.61
+angle_min = -65.0
+angle_max = 232.3
+scale_amount_min = 0.3
+scale_amount_max = 0.8
+
+[node name="Particle2" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(524, 144)
+emitting = false
+amount = 5
+texture = ExtResource("4_15ard")
+lifetime = 0.7
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 120.0
+angular_velocity_min = -46.45
+angular_velocity_max = 83.61
+angle_min = -65.0
+angle_max = 232.3
+scale_amount_min = 0.3
+scale_amount_max = 0.8
+
+[node name="Particle3" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(619, 144)
+emitting = false
+amount = 5
+texture = ExtResource("4_15ard")
+lifetime = 0.7
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 120.0
+angular_velocity_min = -46.45
+angular_velocity_max = 83.61
+angle_min = -65.0
+angle_max = 232.3
+scale_amount_min = 0.3
+scale_amount_max = 0.8
+
+[node name="Particle4" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(716, 144)
+emitting = false
+amount = 5
+texture = ExtResource("4_15ard")
+lifetime = 0.7
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 120.0
+angular_velocity_min = -46.45
+angular_velocity_max = 83.61
+angle_min = -65.0
+angle_max = 232.3
+scale_amount_min = 0.3
+scale_amount_max = 0.8
 
 [connection signal="mouse_entered" from="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice1" to="." method="_on_button_choice_1_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/PanelContainer/VBoxContainer/Bottom/VBoxContainer/HBoxChoices/ButtonChoice1" to="." method="_on_button_choice_1_mouse_exited"]
