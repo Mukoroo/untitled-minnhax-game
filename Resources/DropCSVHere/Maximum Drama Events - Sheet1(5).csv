@@ -14,6 +14,20 @@ TRUE,WeddingPlus1,Generic,Will you be my +1 to my cousin's wedding?,That sounds 
 TRUE,Parents,Generic,My parents want to meet you.,Let's go to dinner,10,10,0,0,Let's go do karaoke,0,-10,10,10
 TRUE,RobinHood,Generic,I just stole Elon Musk's bitcoin wallet.,Let's redistribute that wealth; comrade!,0,0,20,0,Hello; officer? Yes; this one right here!,0,0,0,20
 TRUE,Gambling,Generic,I've started playing high stakes poker and I feel like I have to keep chasing those wins.,All in! I'll start shopping for five star hotel breaks!,0,0,10,10,Maybe you should ease off if it stops being fun,10,0,0,0
+TRUE,Dinner,Generic,What should we do for dinner?,Let’s cook together at home,0,10,-10,-10,Dress up; we’re going out,10,0,10,0
+TRUE,TextBack,Generic,Sorry I didn't text back sooner; my phone died.,No worries; life happens,0,20,0,-10,I was worried! Please carry a charger next time.,10,-10,0,10
+TRUE,Haircut,Generic,I think I want a new haircut.,A fresh new look sounds fun!,0,0,10,-10,You don't need to change anything about you!,10,0,-20,0
+TRUE,LivingRoom,Generic,I want to reorganise the whole living room.,Let’s do it together this weekend.,-10,10,-10,0,Have fun; I'll be in the bar!,0,0,10,20
+TRUE,Outfits,Generic,I bought matching outfits for us. Cute; right?,Absolutely; let’s twin!,0,0,30,0,Hahahaha you're so funny. But no. Never.,10,0,-10,10
+TRUE,Photo,Generic,What's your favorite photo of us?,That one with mostly you,10,0,0,-10,That one with mostly me,0,0,10,20
+TRUE,Reorganize,Generic,I reorganized your stuff to "help",Please ask first; I have a system,0,-10,0,10,That's great! Now show me where everything is?,0,10,-10,-10
+TRUE,Flake,Generic,I booked a fancy restaurant for Friday night; but...oh; aren't you seeing your friends?,I'll make time; let's go!,20,10,-10,10,I love the thought; can we do it next week when I'm free?,10,0,10,10
+TRUE,WakeUp,Generic,I've been reading how it's really good for energy to wake up at 5am every day.,Sounds amazing! I'll try it with you!,10,10,0,0,Sounds amazing! You can tell me all about it after 8!,0,-10,0,10
+TRUE,Llamas,Personal,I ordered twenty llamas because they were on sale,Well...I do love a bargain.,0,10,20,0,Return AT LEAST nineteen of them,0,-10,10,10
+TRUE,TeamRetreat,Generic,I told my boss we can host the team retreat at your place,If it helps you get that big promotion...okay; I guess,0,10,20,20,If you want me to tell your coworkers what I REALLY think of them; be my guest,0,-10,30,30
+TRUE,MatchingTattoos,Generic,You'd get a matching tattoo with me; right?,That's a big commitment. Maybe we start with matching socks.,-10,0,0,20,I know a great portrait artist; I think your face on my arm would be a great look!,10,0,30,0
+TRUE,Pepper,Generic,I volunteered us to judge a hot pepper contest.,Let’s destroy our taste buds together.,0,10,20,0,You judge, I'll...cheer from the sidelines,0,-10,0,20
+TRUE,ZombieTeam,Generic,Would I be on your zombie team if an outbreak happened?,You and me baby; repopulating the planet if we survive,20,0,10,0,Let's be pragmatic here. How hard can you swing a bat?,0,-10,0,10
 FALSE,,,,,0,0,0,0,,0,0,0,0
 FALSE,,,,,0,0,0,0,,0,0,0,0
 FALSE,,,,,0,0,0,0,,0,0,0,0
