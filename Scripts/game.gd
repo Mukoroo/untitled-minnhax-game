@@ -77,6 +77,9 @@ func _on_skip_tutorial_pressed() -> void:
 	episode_manager.end_episode.connect(_on_end_episode_pressed)
 
 func _on_end_episode_pressed() -> void:
+	# Hide Choice UI while Summary UI shows
+	$EpisodeManager/ChoiceUI.visible = false
+	# Add Summary UI
 	var summary_ui = summary_ui_scene.instantiate()
 	$CanvasLayerUI.add_child(summary_ui)
 	
@@ -85,7 +88,13 @@ func _on_end_episode_pressed() -> void:
 
 #Called when SummaryUI is done
 func on_summary_ui_summary_done():
-	print("NEXT EPISODE")
 	#SummaryUI is automatically Destroyed WITHIN SUMMARYUI
+	print("NEXT EPISODE")
+	# Show Choice UI again
+	$EpisodeManager/ChoiceUI.visible = true
+	# Automatically start the next episode
+	## TODO: Alternatively, this could be 'show the next episode button' if we want the player to click again to start
+	$EpisodeManager._on_start_ep_button_pressed()
+	
 	
 	
